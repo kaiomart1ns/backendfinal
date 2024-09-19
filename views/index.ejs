@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martins Bilheteira</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Lora:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>ExpoPrudente 2024 - 12 a 15 de setembro</h1>
+        <h2>Martins Bilheteira</h2>
+    </header>
+    <ul>
+        <% eventos.forEach(evento=> { %>
+            <li>
+                <h2>
+                    <%= evento.nome %>
+                </h2>
+                <p><strong>Data:</strong>
+                    <%= evento.data.toLocaleDateString() %>
+                </p>
+                <p><strong>Local:</strong>
+                    <%= evento.local %>
+                </p>
+                <p><strong>Preço:</strong> R$ <%= evento.preco %>
+                </p>
+                <a href="/eventos/<%= evento.id %>">Ver Detalhes</a>
+            </li>
+            <% }) %>
+    </ul>
+    <footer>
+        <p>Todos os direitos reservados - Martins Bilheteira &copy;</p>
+    </footer>
+</body>
+
+</html>
